@@ -1,7 +1,7 @@
 # WS_DH_Verona2022
 
 This is the repository created for the seminars:
-- Stylometry for the study of German literature (by Massimo Salgaro and Simone Rebora)
+- Stylometry in German literary studies (by Massimo Salgaro and Simone Rebora)
 - Computational methods and reader response studies (by Simone Rebora)  
 
 in the Winter School in Digital Humanities "PROGETTO D’ECCELLENZA 2018-2022 LE DIGITAL HUMANITIES APPLICATE ALLE LINGUE E LETTERATURE STRANIERE", held at the University of Verona between 7-11 November 2022
