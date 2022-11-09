@@ -13,10 +13,12 @@
 install.packages("reshape2")
 install.packages("ggplot2")
 install.packages("ggwordcloud")
+install.packages("stringr")
 
 library(reshape2)
 library(ggplot2)
 library(ggwordcloud)
+library(stringr)
 
 # read the form results
 experiment_results <- read.csv("dataset/Topic Modeling Experiment.csv")
@@ -24,7 +26,7 @@ experiment_results <- read.csv("dataset/Topic Modeling Experiment.csv")
 # extract the descriptions
 descriptions <- experiment_results[,(2*1:10)]
 colnames(descriptions) <- substr(colnames(descriptions), 1, 15)
-colnames(descriptions) <- paste("Topic", 0:9, "--", colnames(descriptions))
+colnames(descriptions) <- paste("Topic", str_pad(string = 1:10, width = 2, pad = 0), "--", colnames(descriptions))
 
 # extract the confidence scores
 confidences <- experiment_results[,(2*1:10)+1]
@@ -59,5 +61,5 @@ for(i in 1:length(descriptions_list)){
 ggplot(descriptions_df, aes(label = term, size = weight)) +
   geom_text_wordcloud_area() +
   facet_wrap(~topic) +
-  scale_size_area(max_size = 5) # you can play a bit with this last number to adapt the graph dimensions
+  scale_size_area(max_size = 10) # you can play a bit with this last number to adapt the graph dimensions
 
